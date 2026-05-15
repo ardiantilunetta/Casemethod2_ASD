@@ -65,8 +65,6 @@ public class DoubleLinkedListPesanan18 {
 
         NodePesanan18 current = head;
 
-        int totalPendapatan = 0;
-
         System.out.println("\n===== LAPORAN PESANAN =====");
 
         while (current != null) {
@@ -79,11 +77,6 @@ public class DoubleLinkedListPesanan18 {
 
             System.out.println("---------------------------");
 
-            totalPendapatan += current.pesanan.harga;
-
-            current = current.next;
         }
-
-        System.out.println("Total Pendapatan : " + totalPendapatan);
     }
 }
