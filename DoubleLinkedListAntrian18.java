@@ -41,6 +41,7 @@ public class DoubleLinkedListAntrian18 {
 
         System.out.println("\n===== DAFTAR ANTREAN =====");
 
+        // Perulangan berjalan selama current tidak null, current bergerak ke node berikutnya menggunakan current.next
         while (current != null) {
 
             System.out.println("No Antrean : " + current.nomorAntrian);
@@ -60,6 +61,7 @@ public class DoubleLinkedListAntrian18 {
             return null;
         }
 
+        // Menyimpan data head yang akan dihapus
         NodeAntrian18 dataKeluar = head;
 
         // Jika hanya ada 1 node
@@ -70,7 +72,7 @@ public class DoubleLinkedListAntrian18 {
             // Head pindah ke node berikutnya
             head = head.next;
 
-            // Prev head baru dibuat null
+            // Prev head baru dibuat null, karena head tidak memiliki node sebelumnya
             head.prev = null;
         }
 

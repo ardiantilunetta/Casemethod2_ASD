@@ -46,6 +46,7 @@ public class Main18 {
 
                 case 3:
 
+                    // Data pembeli yang keluar disimpan pada variabel pembeliDilayani
                     NodeAntrian18 pembeliDilayani = antrian.hapusAntrian();
 
                     if (pembeliDilayani != null) {

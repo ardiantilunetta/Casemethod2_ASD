@@ -5,16 +5,20 @@ public class DoubleLinkedListPesanan18 {
     // Ditambahkan di akhir linked list
     public void tambahPesanan(Pesanan18 pesanan) {
 
-        NodePesanan18 newNode =
-                new NodePesanan18(tail, pesanan, null);
+        // Membuat node baru, prev menunjuk tail lama, next = null karena node berada di paling belakang
+        NodePesanan18 newNode = new NodePesanan18(tail, pesanan, null);
 
         if (head == null) {
+            // jika linked list masih kosong, Head dan tail menunjuk node yang sama
             head = tail = newNode;
+
         } else {
 
+            // Menghubungkan tail lama dengan node baru
             tail.next = newNode;
+            // Menghubungkan node baru dengan tail lama
             newNode.prev = tail;
-
+            // Tail dipindahkan ke node baru
             tail = newNode;
         }
     }
