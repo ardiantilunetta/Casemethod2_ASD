@@ -5,6 +5,12 @@ public class Main18 {
 
         DoubleLinkedListAntrian18 antrian = new DoubleLinkedListAntrian18();
 
+        // Menambahkan data lewat konstruktor
+        antrian.addLast("Fazi", "0811111111");
+        antrian.addLast("Fia", "0822222222");
+        antrian.addLast("Rada", "0833333333");
+        antrian.addLast("Netta", "0844444444");
+
         DoubleLinkedListPesanan18 daftarPesanan = new DoubleLinkedListPesanan18();
 
         int pilih;
@@ -16,9 +22,10 @@ public class Main18 {
             System.out.println("==============================");
             System.out.println("1. Tambah Antrean");
             System.out.println("2. Cetak Antrean");
-            System.out.println("3. Hapus Antrean + Input Pesanan");
+            System.out.println("3. Panggil Antrean");
             System.out.println("4. Laporan Pesanan");
-            System.out.println("5. Keluar");
+            System.out.println("5. Cari Nomor Antrean");
+            System.out.println("6. Keluar");
             System.out.print("Pilih menu : ");
 
             pilih = sc.nextInt();
@@ -34,7 +41,7 @@ public class Main18 {
                     System.out.print("No HP : ");
                     String noHp = sc.nextLine();
 
-                    antrian.tambahAntrian(nama, noHp);
+                    antrian.addLast(nama, noHp);
 
                     break;
 
@@ -47,7 +54,7 @@ public class Main18 {
                 case 3:
 
                     // Data pembeli yang keluar disimpan pada variabel pembeliDilayani
-                    NodeAntrian18 pembeliDilayani = antrian.hapusAntrian();
+                    NodeAntrian18 pembeliDilayani = antrian.removeFirst();
 
                     if (pembeliDilayani != null) {
 
@@ -70,7 +77,7 @@ public class Main18 {
                         // Membuat object pesanan baru, kemudian disimpan ke linked list pesanan
                         Pesanan18 pesananBaru = new Pesanan18(kode, namaPesanan, harga);
 
-                        daftarPesanan.tambahPesanan(pesananBaru);
+                        daftarPesanan.addLast(pesananBaru);
 
                         System.out.println("Pesanan berhasil disimpan");
                     }
@@ -83,11 +90,22 @@ public class Main18 {
 
                     break;
 
+                //menu cari berdasarkan posisi
                 case 5:
 
-                    System.out.println("Program selesai");
+                    System.out.print("Nomor antrean yang dicari : ");
+                    int cari = sc.nextInt();
+
+                    antrian.posisi(cari);
+                    
                     break;
 
+                case 6:
+
+                    System.out.println("Program selesai");
+
+                    break;
+                
                 default:
 
                     System.out.println("Menu tidak tersedia");

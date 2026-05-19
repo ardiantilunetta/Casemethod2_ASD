@@ -3,7 +3,7 @@ public class DoubleLinkedListPesanan18 {
     NodePesanan18 tail;
 
     // Ditambahkan di akhir linked list
-    public void tambahPesanan(Pesanan18 pesanan) {
+    public void addLast(Pesanan18 pesanan) {
 
         // Membuat node baru, prev menunjuk tail lama, next = null karena node berada di paling belakang
         NodePesanan18 newNode = new NodePesanan18(tail, pesanan, null);
@@ -81,6 +81,7 @@ public class DoubleLinkedListPesanan18 {
 
             System.out.println("---------------------------");
 
+            current = current.next;
         }
     }
 }
